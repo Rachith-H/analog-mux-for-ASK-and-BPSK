@@ -58,7 +58,9 @@ The second transmission gate connects Input 2 to the output when the control sig
 Transmission gates are preferred over single MOS switches because they provide low ON resistance and can pass both high and low voltage levels without significant distortion. The circuit is compact, power-efficient, and suitable for high-speed analog applications.
 
 This design forms the basis for implementing modulation techniques like ASK and BPSK, where the multiplexer switches between different modulated signals based on control logic, demonstrating both the functionality of the MUX and its practical application in communication systems.
+### Xschem Implementation of analog multiplexer
 
+![mux-ckt](Images/ana_mux_ckt.png)
 ---
 # Illustration of Amplitude Shift Keying (ASK) using the analog multiplexer
 Amplitude Shift Keying (ASK) is a basic digital modulation technique where the amplitude of a carrier signal varies according to the input digital data. A logic ‘1’ is represented by a higher amplitude of the carrier, while a logic ‘0’ corresponds to a lower or reference amplitude level.
