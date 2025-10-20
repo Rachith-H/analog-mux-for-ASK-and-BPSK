@@ -1,4 +1,6 @@
-# Layout Design of Transmission Gate based 2:1 Analog Multiplexer to Illustrate ASK and BPSK modulation techniques 
+# Layout Design of Transmission Gate based 2:1 Analog Multiplexer to Illustrate ASK and BPSK modulation techniques  
+
+![ana_mux](Images/analog%20mux.png)
 ---  
 # Introduction 
 This project focuses on the design, simulation, and layout implementation of a transmission-gate-based analog multiplexer (MUX) using Xschem and Magic VLSI tool with SCMOS technology. Analog multiplexers are fundamental building blocks in communication and signal-processing systems, enabling the selection of one signal from multiple inputs for further processing.
