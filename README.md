@@ -75,6 +75,35 @@ When the control signal is logic high (data ‘1’), the transmission gate conn
 
 Thus, the output alternates between two amplitude levels in accordance with the input data stream, producing an ASK-modulated waveform. This approach demonstrates how a simple analog MUX can perform amplitude-based modulation using transmission-gate switching and can be efficiently verified through SPICE simulations in Xschem and Magic.
 
+### Xshem Circuit Implementation  
+
+![ask_xschem](Images/xschem_ask.jpeg) 
+
+![ckt_ask](Images/ckt_ask.jpeg) 
+
+### Xschem Simulation Results
+The following waveforms are obtained by simulating the netlist extracated from Xschem circuit using Ngspice Level-1 SPICE model.
+Here,
+- net1 is Inverted message signal
+- net2 is Carrier signal
+- net3 is Constant reference voltage
+- net4 is Message signal
+- out is ASK output
+
+
+![ask_op](Images/ask_waveform.jpeg) 
+![ask_zoom](Images/ask_zoom.jpeg) 
+
+### Magic Layout Implementation
+
+
+
+
+
+
+
+
+
 ---
 # Illustration of Binary Phase Shift Keying (BPSK) using the analog multiplexer
 
@@ -91,6 +120,38 @@ In this project, the transmission-gate-based analog multiplexer is utilized to d
 When the control signal is logic high (data ‘1’), the MUX connects the in-phase carrier (0°) to the output. When the control signal is logic low (data ‘0’), the MUX switches to the 180° phase-shifted carrier, effectively inverting the phase of the transmitted signal.
 
 The output waveform thus alternates between two phase states 0° and 180° in synchronization with the input digital data, realizing BPSK modulation. This behavior was verified through SPICE simulations using Xschem and Magic, confirming accurate phase switching and demonstrating the analog MUX’s role in implementing phase-based modulation schemes.
+
+### Xschem Circuit Implementation 
+
+![bpsk_ckt](Images/xschem_bpsk.jpeg)
+
+![ckt_bpsk](Images/ckt_bpsk.jpeg) 
+
+
+### Xschem Simulation Results 
+
+
+The following waveforms are obtained by simulating the netlist extracated from Xschem circuit using Ngspice Level-1 SPICE model.
+Here,
+- net1 is Inverted message signal
+- net2 is Carrier signal
+- net3 is Inverted carrier signal
+- net4 is Message signal
+- out is BPSK output
+
+![bpsk_op](Images/bpsk_waveform.jpeg) 
+![bpsk_zoom](Images/bpsk_zoom.jpeg) 
+
+
+### Magic Layout Implementation  
+
+
+
+
+
+
+
+
 
 ---
 # Conclusion  
