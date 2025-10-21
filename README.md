@@ -60,7 +60,14 @@ Transmission gates are preferred over single MOS switches because they provide l
 This design forms the basis for implementing modulation techniques like ASK and BPSK, where the multiplexer switches between different modulated signals based on control logic, demonstrating both the functionality of the MUX and its practical application in communication systems.
 ### Xschem Implementation of analog multiplexer
 
-![mux-ckt](Images/analog_mux_ckt.png)
+![mux-ckt](Images/analog_mux_ckt.png) 
+
+### Magic Implementation of Analog Multiplexer
+
+![mux1](Images/tg_mux1.png) 
+![mux2](Images/tg_mux2.png) 
+![mux3](Images/tg_mux3.png)
+
 ---
 # Illustration of Amplitude Shift Keying (ASK) using the analog multiplexer 
 
@@ -183,8 +190,9 @@ Here,
 
 ---
 # Conclusion  
-The design and implementation of a transmission-gate-based analog multiplexer were successfully carried out using Xschem, Magic, and Ngspice on Ubuntu. The circuit effectively demonstrated Amplitude Shift Keying (ASK) and Binary Phase Shift Keying (BPSK) modulation techniques, validating the versatility of analog multiplexers in communication systems.
 
-Through schematic-level and layout-level simulations using Level 1 SPICE models, the project verified correct amplitude and phase modulation behavior. The results highlight how a simple analog MUX, when designed using transmission gates, can perform essential signal-processing functions with minimal hardware complexity.
+The design and implementation of a transmission-gate-based analog multiplexer were successfully carried out using Xschem, Magic, and Ngspice on Ubuntu. The waveforms obtained by simulating the netlists from both the Xschem schematic and the Magic layout were found to be identical, confirming the accuracy and consistency of the design flow. The circuit effectively demonstrated Amplitude Shift Keying (ASK) and Binary Phase Shift Keying (BPSK) modulation techniques, validating the versatility of analog multiplexers in communication systems.
 
-This work serves as a practical example of integrating analog design, SPICE simulation, and VLSI layout implementation, bridging theoretical communication concepts with real-world circuit design.
+Through schematic level and layout level simulations using Level 1 SPICE models, the project verified correct amplitude and phase modulation behavior. The results highlight how a simple analog MUX, when designed using transmission gates, can perform essential signal-processing functions with minimal hardware complexity.
+
+This work serves as a practical example of integrating analog design, SPICE simulation, and VLSI layout implementation using open-source tools, bridging theoretical communication concepts with real-world circuit design.
