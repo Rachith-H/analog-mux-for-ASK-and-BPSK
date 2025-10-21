@@ -62,7 +62,8 @@ This design forms the basis for implementing modulation techniques like ASK and 
 
 ![mux-ckt](Images/analog_mux_ckt.png)
 ---
-# Illustration of Amplitude Shift Keying (ASK) using the analog multiplexer
+# Illustration of Amplitude Shift Keying (ASK) using the analog multiplexer 
+
 Amplitude Shift Keying (ASK) is a basic digital modulation technique where the amplitude of a carrier signal varies according to the input digital data. A logic ‘1’ is represented by a higher amplitude of the carrier, while a logic ‘0’ corresponds to a lower or reference amplitude level.
 
 In this project, the transmission-gate-based analog multiplexer is used to realize ASK modulation:
@@ -82,7 +83,7 @@ Thus, the output alternates between two amplitude levels in accordance with the 
 ![ckt_ask](Images/ckt_ask.jpeg) 
 
 ### Xschem Simulation Results
-The following waveforms are obtained by simulating the netlist extracated from Xschem circuit using Ngspice Level-1 SPICE model.
+The following waveforms are obtained by simulating the netlist extracted from Xschem circuit using Ngspice Level-1 SPICE model.
 Here,
 - net1 is Inverted message signal
 - net2 is Carrier signal
@@ -94,7 +95,23 @@ Here,
 ![ask_op](Images/ask_waveform.jpeg) 
 ![ask_zoom](Images/ask_zoom.jpeg) 
 
-### Magic Layout Implementation
+### Magic Layout Implementation 
+
+![ask_layout](Images/layout_ask.png)  
+
+### Magic Simulation Results  
+
+The following waveforms are obtained by simulating the netlist extracted from Magic Layout using Ngspice Level-1 SPICE model.
+Here,
+- selbar is Inverted message signal
+- in1 is Carrier signal
+- in2 is Constant reference voltage
+- sel is Message signal
+- out is ASK output
+
+
+![layout_ask_op](Images/assk_layout_wave.png)
+![layout_ask_zoom](Images/ask_layout-wave_zoom.png)
 
 
 
@@ -131,7 +148,7 @@ The output waveform thus alternates between two phase states 0° and 180° in sy
 ### Xschem Simulation Results 
 
 
-The following waveforms are obtained by simulating the netlist extracated from Xschem circuit using Ngspice Level-1 SPICE model.
+The following waveforms are obtained by simulating the netlist extracted from Xschem circuit using Ngspice Level-1 SPICE model.
 Here,
 - net1 is Inverted message signal
 - net2 is Carrier signal
@@ -143,12 +160,23 @@ Here,
 ![bpsk_zoom](Images/bpsk_zoom.jpeg) 
 
 
-### Magic Layout Implementation  
+### Magic Layout Implementation 
+
+![bpsk_layout](Images/layout_bpsk.png)  
+
+### Magic Simulation Results  
+
+The following waveforms are obtained by simulating the netlist extracted from Magic Layout using Ngspice Level-1 SPICE model.
+Here,
+- selbar is Inverted message signal
+- in1 is Carrier signal
+- in2 is Constant reference voltage
+- sel is Message signal
+- out is ASK output
 
 
-
-
-
+![layout_ask_op](Images/bpsk_layout_wave.png)
+![layout_ask_zoom](Images/bpsk_layout_wave_zoom.png)
 
 
 
