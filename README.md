@@ -60,12 +60,15 @@ Transmission gates are preferred over single MOS switches because they provide l
 This design forms the basis for implementing modulation techniques like ASK and BPSK, where the multiplexer switches between different modulated signals based on control logic, demonstrating both the functionality of the MUX and its practical application in communication systems.
 ### Xschem Implementation of analog multiplexer
 
-![mux-ckt](Images/analog_mux_ckt.png) 
+![mux_main](Images/xschem_mainmux.png)
+![mux-ckt](Images/mainmux.png)  
 
+  
 ### Magic Implementation of Analog Multiplexer
 
-![mux1](Images/tg_mux1.png) 
 ![mux2](Images/tg_mux2.png) 
+![mux1](Images/tg_mux1.png) 
+
 ![mux3](Images/tg_mux3.png)
 
 ---
