@@ -1,0 +1,33 @@
+* SPICE3 file created from analog_mux_layout_ask.ext - technology: scmos
+
+.model nfet nmos(LEVEL=1 VTO=0.7 KP=50u LAMBDA=0.02)
+.model pfet pmos(LEVEL=1 VTO=-0.7 KP=25u LAMBDA=0.02)
+
+
+.option scale=1u
+
+M1000 out selbar in2 Gnd nfet w=4 l=2
++  ad=24p pd=20u as=24p ps=20u
+M1001 out selbar in1 w_n6_18# pfet w=8 l=2
++  ad=48p pd=28u as=48p ps=28u
+M1002 out sel in1 Gnd nfet w=4 l=2
++  ad=24p pd=20u as=24p ps=20u
+M1003 out sel in2 w_n6_n20# pfet w=8 l=2
++  ad=48p pd=28u as=48p ps=28u
+C0 sel 0 8.038f 
+C1 in2 0 2.82f 
+C2 selbar 0 7.086f 
+C3 out 0 13.912f 
+C4 in1 0 2.82f 
+
+V1 in1 Gnd SIN(5 5 600)
+V2 sel Gnd PULSE(8 0 0 0 0 5m 10m)
+V3 selbar Gnd PULSE(0 8 0 0 0 5m 10m)
+V4 in2 Gnd 5
+
+.tran 0.1m 100m
+.control
+run 
+plot v(selbar)+12 v(in1)+22 v(sel)+34 v(in2)+46 v(out)
+.endc
+.end

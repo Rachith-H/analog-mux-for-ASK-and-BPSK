@@ -1,0 +1,24 @@
+timestamp 1760677986
+version 8.3
+tech scmos
+style lambda=1.0(scna20_orb)
+scale 1000 1 100
+resistclasses 26670 59550 23860 19690 27260 2000000 49 26 2505830
+node "sel" 212 4060 -1 -27 pc 0 0 0 0 44 44 0 0 0 0 0 0 28 22 0 0 0 0
+node "in2" 120 2820 -5 -19 pdiff 24 20 48 28 0 0 0 0 0 0 0 0 96 56 0 0 0 0
+node "selbar" 368 7086 -1 9 pc 0 0 0 0 70 70 0 0 0 0 0 0 40 28 0 0 0 0
+node "out" 523 13912 3 -19 pdiff 48 40 96 56 0 0 0 0 0 0 0 0 368 192 0 0 0 0
+node "in1" 120 2820 -5 19 pdiff 24 20 48 28 0 0 0 0 0 0 0 0 96 56 0 0 0 0
+node "sel" 151 3978 -1 45 pc 0 0 0 0 34 34 0 0 0 0 0 0 28 22 0 0 0 0
+node "w_n6_n20#" 4009 0 -6 -20 nw 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 160 52
+node "w_n6_18#" 4009 0 -6 18 nw 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 160 52
+cap "w_n6_n20#" "sel" 156
+cap "w_n6_18#" "in1" 188
+cap "w_n6_n20#" "out" 188
+cap "w_n6_18#" "out" 188
+cap "w_n6_n20#" "in2" 188
+cap "w_n6_18#" "selbar" 156
+device mosfet pfet 1 -19 2 -18 2 8 "w_n6_n20#" "sel" 4 0 "in2" 8 48,28 "out" 8 48,28
+device mosfet nfet 1 0 2 1 2 4 "Gnd!" "selbar" 4 0 "in2" 4 24,20 "out" 4 24,20
+device mosfet pfet 1 19 2 20 2 8 "w_n6_18#" "selbar" 4 0 "in1" 8 48,28 "out" 8 48,28
+device mosfet nfet 1 38 2 39 2 4 "Gnd!" "sel" 4 0 "in1" 4 24,20 "out" 4 24,20
