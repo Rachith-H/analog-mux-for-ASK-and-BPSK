@@ -1,0 +1,31 @@
+** sch_path: /home/rachtih/analog_mux.sch
+**.subckt analog_mux out
+*.opin out
+V1 net2 GND SIN(5 5 600)
+V2 net1 GND PULSE(0 8 0 0 0 5m 10m)
+V3 net3 GND SIN(5 5 600 0 0 180)
+V4 net4 GND PULSE(8 0 0 0 0 5m 10m)
+M1 out net4 net2 GND nmos w=5u l=0.18u m=1
+M2 out net1 net3 GND nmos w=5u l=0.18u m=1
+M3 out net1 net2 net5 pmos w=5u l=0.18u m=1
+M4 out net4 net3 net5 pmos w=5u l=0.18u m=1
+V5 net5 GND 8
+**** begin user architecture code
+
+
+.model nmos NMOS (LEVEL=1 VTO=2.0 KP=120u LAMBDA=0.02)
+.model pmos PMOS (LEVEL=1 VTO=-2.0 KP=50u LAMBDA=0.02)
+
+.tran 0.1m 100m
+
+.control
+run
+plot v(net1)+12 v(net2)+22 v(net4)+34 v(net3)+44 v(out)
+
+.endc
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end
