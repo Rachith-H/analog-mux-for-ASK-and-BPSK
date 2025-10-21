@@ -90,8 +90,9 @@ Thus, the output alternates between two amplitude levels in accordance with the 
 ![ckt_ask](Images/ckt_ask.jpeg) 
 
 ### Xschem Simulation Results
-The following waveforms are obtained by simulating the netlist extracted from Xschem circuit using Ngspice Level-1 SPICE model.
-Here,
+The following waveforms are obtained by simulating the netlist extracted from Xschem circuit using Ngspice Level-1 SPICE model. 
+
+In the waveforms shown below,
 - net1 is Inverted message signal
 - net2 is Carrier signal
 - net3 is Constant reference voltage
@@ -108,8 +109,9 @@ Here,
 
 ### Magic Simulation Results  
 
-The following waveforms are obtained by simulating the netlist extracted from Magic Layout using Ngspice Level-1 SPICE model.
-Here,
+The following waveforms are obtained by simulating the netlist extracted from Magic Layout using Ngspice Level-1 SPICE model. 
+
+In the waveforms shown below,
 - selbar is Inverted message signal
 - in1 is Carrier signal
 - in2 is Constant reference voltage
@@ -155,8 +157,9 @@ The output waveform thus alternates between two phase states 0° and 180° in sy
 ### Xschem Simulation Results 
 
 
-The following waveforms are obtained by simulating the netlist extracted from Xschem circuit using Ngspice Level-1 SPICE model.
-Here,
+The following waveforms are obtained by simulating the netlist extracted from Xschem circuit using Ngspice Level-1 SPICE model. 
+
+In the waveforms shown below,
 - net1 is Inverted message signal
 - net2 is Carrier signal
 - net3 is Inverted carrier signal
@@ -173,8 +176,9 @@ Here,
 
 ### Magic Simulation Results  
 
-The following waveforms are obtained by simulating the netlist extracted from Magic Layout using Ngspice Level-1 SPICE model.
-Here,
+The following waveforms are obtained by simulating the netlist extracted from Magic Layout using Ngspice Level-1 SPICE model. 
+
+In the waveforms shown below,
 - selbar is Inverted message signal
 - in1 is Carrier signal
 - in2 is Constant reference voltage
