@@ -11,7 +11,7 @@ This work serves as a reference for students and engineers aiming to understand 
 
 --- 
 # Tools Used  
-- Xschem: Used for schematic design and circuit-level simulation of the transmission-gate analog multiplexer. Xschem provides an intuitive interface to create and simulate analog and mixed-signal circuits.
+- Xschem: Used for schematic design and circuit-level simulation of the transmission-gate analog multiplexer.
 
 - Magic VLSI Tool: For layout implementation of the MUX in SCMOS technology.
 
