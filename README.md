@@ -5,7 +5,7 @@
 # Introduction 
 This project focuses on the design, simulation, and layout implementation of a transmission-gate-based analog multiplexer (MUX) using Xschem and Magic VLSI tool with SCMOS technology. Analog multiplexers are fundamental building blocks in communication and signal-processing systems, enabling the selection of one signal from multiple inputs for further processing.
 
-The designed MUX is applied to demonstrate Amplitude Shift Keying (ASK) and Binary Phase Shift Keying (BPSK) modulation techniques, showing its practical relevance in digital communication. The project highlights the complete VLSI workflow: schematic design and simulation in Xschem, followed by layout implementation and verification in Magic, including DRC/LVS checks.
+The designed MUX is applied to demonstrate Amplitude Shift Keying (ASK) and Binary Phase Shift Keying (BPSK) modulation techniques, showing its practical relevance in digital communication. The project highlights the VLSI workflow from schematic design and simulation in Xschem, followed by layout implementation in Magic.
 
 This work serves as a reference for students and engineers aiming to understand the integration of analog circuit design, layout, and modulation applications in a practical VLSI environment.  
 
@@ -13,36 +13,31 @@ This work serves as a reference for students and engineers aiming to understand 
 # Tools Used  
 - Xschem: Used for schematic design and circuit-level simulation of the transmission-gate analog multiplexer. Xschem provides an intuitive interface to create and simulate analog and mixed-signal circuits.
 
-- Magic VLSI Tool: For layout implementation of the MUX in SCMOS technology, including DRC and LVS verification.
+- Magic VLSI Tool: For layout implementation of the MUX in SCMOS technology.
 
-- Ngspice: Used for SPICE-level simulation of both schematic and layout designs to validate functionality. All simulations were performed using Level 1 SPICE models, providing accurate transistor-level verification while keeping the simulation simple and efficient.
+- Ngspice: Used for SPICE-level simulation of both schematic and layout designs to validate functionality. All simulations were performed using Level 1 SPICE models, providing basic transistor-level behaviour while keeping the simulation simple and efficient.
 
-- Ubuntu OS: The entire design, simulation, and layout workflow was carried out on Ubuntu, providing a stable open-source environment for VLSI design and verification.
+- Ubuntu OS: The entire design, simulation, and layout workflow was carried out on Ubuntu, providing a stable open-source environment for VLSI design.
 ---
 # Methodology 
 * **Circuit Design in Xschem**
-  - The transmission-gate-based analog multiplexer was designed in Xschem.
-  - Schematic capture was performed to connect all inputs, outputs, and control signals.
+  - The transmission gate based analog multiplexer was designed in Xschem.
   - The circuit netlist was generated from Xschem for simulation purposes.
 
-* **Simulation of Schematic (Xschem + Ngspice)**
+* **Simulation of Circuit Design**
   - Using Ngspice with Level 1 SPICE models, the generated netlist was simulated.
-  - ASK and BPSK modulated signals were applied as inputs to test the multiplexer functionality.
-  - Output waveforms were analyzed to verify correct selection and modulation behavior.
+  - ASK and BPSK signals were obtained as outputs ensuring the multiplexer functionality.
 
 * **Layout Design in Magic**
   - The analog multiplexer circuit was implemented at the layout level using Magic VLSI tool with SCMOS technology.
   - Placement and routing of transistors were done carefully to match the schematic design.
-  - DRC (Design Rule Check) was performed to ensure correctness of the layout.
 
 * **Simulation of Layout Netlist**
   - The netlist was extracted from the Magic layout.
-  - Using Ngspice with Level 1 SPICE models, the layout netlist was simulated with the same ASK and BPSK input signals.
-  - Output waveforms were compared with schematic-level simulation to confirm correct functionality.
+  - Using Ngspice with Level 1 SPICE models, the layout netlist was simulated to obtain ASK and BPSK signals.
 
 * **Validation and Verification**
-  - Both schematic-level and layout-level simulations were analyzed to ensure accurate signal selection and modulation demonstration.
-  - Any discrepancies were corrected by adjusting transistor sizing or layout connections.
+  - Both schematic-level and layout-level simulations were found to be identical ensuring proper signal selection and modulation demonstration.
 --- 
 
 # Design of 2:1 Analog Multiplexer 
@@ -51,11 +46,11 @@ An analog multiplexer (MUX) is a fundamental circuit that selects one input sign
 
 A simple 2-input analog MUX can be efficiently implemented using two transmission gates (TGs). Each transmission gate acts as a bidirectional switch, allowing the selected input signal to pass through to the output when its control signal is active. In this design:
 
-The first transmission gate connects Input 1 to the output when the control signal S is logic high.
+The first transmission gate connects Input 1 to the output when the control signal is logic high.
 
-The second transmission gate connects Input 2 to the output when the control signal S is logic low.
+The second transmission gate connects Input 2 to the output when the control signal is logic low.
 
-Transmission gates are preferred over single MOS switches because they provide low ON resistance and can pass both high and low voltage levels without significant distortion. The circuit is compact, power-efficient, and suitable for high-speed analog applications.
+Transmission gates are preferred over single MOS switches because they provide low ON resistance and can pass both high and low voltage levels without significant distortion. The circuit is compact, and suitable for analog applications.
 
 This design forms the basis for implementing modulation techniques like ASK and BPSK, where the multiplexer switches between different modulated signals based on control logic, demonstrating both the functionality of the MUX and its practical application in communication systems.
 ### Xschem Implementation of analog multiplexer
@@ -96,10 +91,10 @@ Thus, the output alternates between two amplitude levels in accordance with the 
 The following waveforms are obtained by simulating the netlist extracted from Xschem circuit using Ngspice Level-1 SPICE model. 
 
 In the waveforms shown below,
-- net1 is Inverted message signal
-- net2 is Carrier signal
-- net3 is Constant reference voltage
-- net4 is Message signal
+- net1 is Inverted message signal - 100Hz , inversion of message signal.
+- net2 is Carrier signal - 600Hz
+- net3 is Constant reference voltage - 5V
+- net4 is Message signal - 100Hz
 - out is ASK output
 
 
@@ -115,10 +110,10 @@ In the waveforms shown below,
 The following waveforms are obtained by simulating the netlist extracted from Magic Layout using Ngspice Level-1 SPICE model. 
 
 In the waveforms shown below,
-- selbar is Inverted message signal
-- in1 is Carrier signal
-- in2 is Constant reference voltage
-- sel is Message signal
+- selbar is Inverted message signal - 100Hz , inversion of message signal.
+- in1 is Carrier signal - 600Hz
+- in2 is Constant reference voltage - 5V
+- sel is Message signal - 100Hz
 - out is ASK output
 
 
@@ -163,10 +158,10 @@ The output waveform thus alternates between two phase states 0° and 180° in sy
 The following waveforms are obtained by simulating the netlist extracted from Xschem circuit using Ngspice Level-1 SPICE model. 
 
 In the waveforms shown below,
-- net1 is Inverted message signal
-- net2 is Carrier signal
-- net3 is Inverted carrier signal
-- net4 is Message signal
+- net1 is Inverted message signal - 100Hz , inversion of Message signal
+- net2 is Carrier signal - 600Hz
+- net3 is Inverted carrier signal - 600Hz , 180° phase shift of Carrier signal 
+- net4 is Message signal - 100Hz
 - out is BPSK output
 
 ![bpsk_op](Images/bpsk_waveform.jpeg) 
@@ -182,11 +177,11 @@ In the waveforms shown below,
 The following waveforms are obtained by simulating the netlist extracted from Magic Layout using Ngspice Level-1 SPICE model. 
 
 In the waveforms shown below,
-- selbar is Inverted message signal
-- in1 is Carrier signal
-- in2 is Constant reference voltage
-- sel is Message signal
-- out is ASK output
+- selbar is Inverted message signal - 100Hz , inversion of Message signal
+- in1 is Carrier signal - 600Hz
+- in2 is Inverted Carrier signal - 600Hz , 180° phase shift of Carrier signal
+- sel is Message signal - 100Hz
+- out is BPSK output
 
 
 ![layout_ask_op](Images/bpsk_layout_wave.png)
